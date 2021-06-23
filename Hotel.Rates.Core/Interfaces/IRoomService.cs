@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Hotel.Rates.Data;
+using Hotel.Rates.Core.Models;
 
+using Hotel.Rates.Infrastructura;
 
 namespace Hotel.Rates.Core.Interfaces
 {
-	class IRoomService
+	public interface IRoomService
 	{
-
+		ServiceResult<IEnumerable<RoomDto>> Get();
 	}
 }

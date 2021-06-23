@@ -6,11 +6,13 @@ namespace Hotel.Rates.Core.Interfaces
 {
 	public interface IRepository<TEntity>
 	{
-		IReadOnlyList<TEntity> Get();
+		IQueryable<TEntity> Get();
 
 		TEntity Get(int id);
 
 		TEntity Create(TEntity entity);
+
+		TEntity Update();
 
 	}
 }

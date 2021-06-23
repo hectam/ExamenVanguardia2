@@ -1,5 +1,8 @@
-﻿using Hotel.Rates.Api.Models;
-using Hotel.Rates.Data;
+﻿
+using Hotel.Rates.Core.Enum;
+using Hotel.Rates.Core.Interfaces;
+using Hotel.Rates.Core.Models;
+
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -13,41 +16,35 @@ namespace Hotel.Rates.Api.Controllers
     [Route("api/[controller]")]
     public class ReservationsController : ControllerBase
     {
-        private readonly InventoryContext _context;
+        private readonly IReservationService<double> reservationService;
 
-        public ReservationsController(InventoryContext context)
+        public ReservationsController(IReservationService<double> reservationService)
         {
-            this._context = context;
+            this.reservationService = reservationService;
         }
 
-        [HttpPost]
-        public IActionResult Post([FromBody]ReservationModelDto reservationModel)
+        [HttpPost("Night")]
+        
+        public IActionResult PostNightPlan([FromBody]ReservationModelDto reservationModel)
         {
-            var ratePlan = _context
-                .NightlyRatePlans
-                .Include(r => r.Seasons)
-                .Include(r => r.RatePlanRooms)
-                .ThenInclude(r => r.Room)
-                .First(r => r.Id == reservationModel.RatePlanId);
-            var canReserve = ratePlan.Seasons
-                .Any(s => s.StartDate >= reservationModel.ReservationStart && s.EndDate <= reservationModel.ReservationEnd);
-            var room = ratePlan.RatePlanRooms
-                .First(r => r.RoomId == reservationModel.RoomId && r.RatePlanId == reservationModel.RatePlanId);
-            var isRoomAvailable = room.Room.Amount > 0 &&
-                room.Room.MaxAdults > reservationModel.AmountOfChildren &&
-                room.Room.MaxChildren <= reservationModel.AmountOfChildren;
+            var checkNightPlan = reservationService.NightlyPlan(reservationModel);
+            if (checkNightPlan.ResponseCode == ResponseCode.Success)
+                return Ok(checkNightPlan.Result);
 
-            if (canReserve && isRoomAvailable)
-            {
-                room.Room.Amount -= 1;
-                _context.SaveChanges();
-                var days = (reservationModel.ReservationEnd - reservationModel.ReservationStart).TotalDays;
-                return Ok(new
-                {
-                    Price = days * ratePlan.Price
-                });
-            }
-            return BadRequest();
+            return BadRequest(checkNightPlan.Error);
+
+        }
+
+        [HttpPost("Interval")]
+
+        public IActionResult PostIntervalPlan([FromBody] ReservationModelDto reservationModel)
+        {
+            var checkIntervalPlan = reservationService.IntervalPlan(reservationModel);
+            if (checkIntervalPlan.ResponseCode == ResponseCode.Success)
+                return Ok(checkIntervalPlan.Result);
+
+            return BadRequest(checkIntervalPlan.Error);
+
         }
     }
 }

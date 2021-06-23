@@ -1,4 +1,6 @@
-﻿using Hotel.Rates.Data;
+﻿using Hotel.Rates.Core.Enum;
+using Hotel.Rates.Core.Interfaces;
+using Hotel.Rates.Data;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -11,17 +13,21 @@ namespace Hotel.Rates.Api.Controllers
     [Route("api/[controller]")]
     public class RoomsController : ControllerBase
     {
-        private readonly InventoryContext _inventoryContext;
+        private readonly IRoomService _roomServices;
 
-        public RoomsController(InventoryContext inventoryContext)
+        public RoomsController(IRoomService roomServices)
         {
-            _inventoryContext = inventoryContext;
+            this._roomServices = roomServices;
         }
 
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(_inventoryContext.Rooms);
+            var verify = _roomServices.Get();
+            if (verify.ResponseCode == ResponseCode.Success)
+                return Ok(verify.Result);
+
+            return BadRequest(verify.Error);
         }
     }
 }

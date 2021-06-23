@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Hotel.Rates.Infraestructura.Repositories
 {
-	class RatePlansRepository: IRepository<RatePlan>
+	class RatePlansRepository: BaseRepository<RatePlan>
 	{
 
 		private readonly InventoryContext _inventoryContext;
@@ -17,20 +17,26 @@ namespace Hotel.Rates.Infraestructura.Repositories
 			this._inventoryContext = inventoryContext;
 		}
 
-		public RatePlan Create(RatePlan entity)
+		public override RatePlan Create(RatePlan entity)
 		{
 			_inventoryContext.RatePlans.Add(entity);
 			return entity;
 		}
 
-		public IReadOnlyList<RatePlan> Get()
+		public override IQueryable<RatePlan> Get()
 		{
-			return _inventoryContext.RatePlans.ToList();
+			return _inventoryContext.RatePlans;
 		}
 
-		public RatePlan Get(int id)
+		public override RatePlan Get(int id)
 		{
 			return _inventoryContext.RatePlans.FirstOrDefault(x => x.Id == id);
+		}
+
+		public override RatePlan Update()
+		{
+			_inventoryContext.SaveChanges();
+			return null;
 		}
 	}
 }

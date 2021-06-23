@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace Hotel.Rates.Infraestructura.Repositories
 {
-	class NigthRatePlanRepository : IRepository<NightlyRatePlan>
+	class NigthRatePlanRepository : BaseRepository<NightlyRatePlan>
 	{
 		private readonly InventoryContext _inventoryContext;
 
@@ -15,20 +15,26 @@ namespace Hotel.Rates.Infraestructura.Repositories
 		{
 			this._inventoryContext = inventoryContext;
 		}
-		public NightlyRatePlan Create(NightlyRatePlan entity)
+		public override NightlyRatePlan Create(NightlyRatePlan entity)
 		{
 			_inventoryContext.NightlyRatePlans.Add(entity);
 			return entity;
 		}
 
-		public IReadOnlyList<NightlyRatePlan> Get()
+		public override IQueryable<NightlyRatePlan> Get()
 		{
-			return _inventoryContext.NightlyRatePlans.ToList();
+			return _inventoryContext.NightlyRatePlans;
 		}
 
-		public NightlyRatePlan Get(int id)
+		public override NightlyRatePlan Get(int id)
 		{
 			return _inventoryContext.NightlyRatePlans.FirstOrDefault(x => x.Id == id);
+		}
+
+		public override NightlyRatePlan Update()
+		{
+			_inventoryContext.SaveChanges();
+			return null;
 		}
 	}
 }

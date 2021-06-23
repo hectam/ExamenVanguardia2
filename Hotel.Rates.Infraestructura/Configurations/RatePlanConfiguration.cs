@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Hotel.Rates.Core.Entities;
+using Hotel.Rates.Core.Enum;
 
 namespace Hotel.Rates.Infraestructura.Configurations
 {

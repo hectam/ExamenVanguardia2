@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace Hotel.Rates.Infraestructura.Repositories
 {
-	class IntervalRatePlanRepository : IRepository<IntervalRatePlan>
+	class IntervalRatePlanRepository : BaseRepository<IntervalRatePlan>
 	{
 		private readonly InventoryContext _inventoryContext;
 
@@ -16,24 +16,28 @@ namespace Hotel.Rates.Infraestructura.Repositories
 			this._inventoryContext = inventoryContext;
 		}
 
-		public IntervalRatePlan Create(IntervalRatePlan entity)
+		public override IntervalRatePlan Create(IntervalRatePlan entity)
 		{
 			_inventoryContext.IntervalRatePlans.Add(entity);
 			return entity;
 		}
 
-		public IReadOnlyList<IntervalRatePlan> Get()
+		public override IQueryable<IntervalRatePlan> Get()
 		{
-			return _inventoryContext.IntervalRatePlans.ToList();
+			return _inventoryContext.IntervalRatePlans;
 		}
 
-		public IntervalRatePlan Get(int id)
+		public override IntervalRatePlan Get(int id)
 		{
 			return _inventoryContext.IntervalRatePlans.FirstOrDefault(x => x.Id == id);
 		}
 
-		
+		public override IntervalRatePlan Update()
+		{
+			_inventoryContext.SaveChanges();
+			return null;
+		}
 
-	
+
 	}
 }

@@ -1,0 +1,12 @@
+C:\Users\darkz\Documents\Q2\Vanguardia\Examen2\hotel.rates.api-master\src\Hotel.Rates.Data\bin\Debug\netcoreapp3.1\Hotel.Rates.Data.deps.json
+C:\Users\darkz\Documents\Q2\Vanguardia\Examen2\hotel.rates.api-master\src\Hotel.Rates.Data\bin\Debug\netcoreapp3.1\Hotel.Rates.Data.runtimeconfig.json
+C:\Users\darkz\Documents\Q2\Vanguardia\Examen2\hotel.rates.api-master\src\Hotel.Rates.Data\bin\Debug\netcoreapp3.1\Hotel.Rates.Data.runtimeconfig.dev.json
+C:\Users\darkz\Documents\Q2\Vanguardia\Examen2\hotel.rates.api-master\src\Hotel.Rates.Data\bin\Debug\netcoreapp3.1\Hotel.Rates.Data.dll
+C:\Users\darkz\Documents\Q2\Vanguardia\Examen2\hotel.rates.api-master\src\Hotel.Rates.Data\bin\Debug\netcoreapp3.1\Hotel.Rates.Data.pdb
+C:\Users\darkz\Documents\Q2\Vanguardia\Examen2\hotel.rates.api-master\src\Hotel.Rates.Data\obj\Debug\netcoreapp3.1\Hotel.Rates.Data.csprojAssemblyReference.cache
+C:\Users\darkz\Documents\Q2\Vanguardia\Examen2\hotel.rates.api-master\src\Hotel.Rates.Data\obj\Debug\netcoreapp3.1\Hotel.Rates.Data.AssemblyInfoInputs.cache
+C:\Users\darkz\Documents\Q2\Vanguardia\Examen2\hotel.rates.api-master\src\Hotel.Rates.Data\obj\Debug\netcoreapp3.1\Hotel.Rates.Data.AssemblyInfo.cs
+C:\Users\darkz\Documents\Q2\Vanguardia\Examen2\hotel.rates.api-master\src\Hotel.Rates.Data\obj\Debug\netcoreapp3.1\Hotel.Rates.Data.csproj.CoreCompileInputs.cache
+C:\Users\darkz\Documents\Q2\Vanguardia\Examen2\hotel.rates.api-master\src\Hotel.Rates.Data\obj\Debug\netcoreapp3.1\Hotel.Rates.Data.dll
+C:\Users\darkz\Documents\Q2\Vanguardia\Examen2\hotel.rates.api-master\src\Hotel.Rates.Data\obj\Debug\netcoreapp3.1\Hotel.Rates.Data.pdb
+C:\Users\darkz\Documents\Q2\Vanguardia\Examen2\hotel.rates.api-master\src\Hotel.Rates.Data\obj\Debug\netcoreapp3.1\Hotel.Rates.Data.genruntimeconfig.cache

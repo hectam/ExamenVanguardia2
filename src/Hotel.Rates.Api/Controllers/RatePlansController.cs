@@ -1,4 +1,4 @@
-﻿using Hotel.Rates.Data;
+﻿using Hotel.Rates;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;

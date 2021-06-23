@@ -21,7 +21,7 @@ namespace Hotel.Rates.Api.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody]ReservationModel reservationModel)
+        public IActionResult Post([FromBody]ReservationModelDto reservationModel)
         {
             var ratePlan = _context
                 .NightlyRatePlans

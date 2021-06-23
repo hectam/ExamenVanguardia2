@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "gUZJYqi4tRh2RGfp33jdRRecU8YhqsVCpiAlhKNA7O1nB++8g0XoWTIoml7zAnM6CiI1eTPTV3RwQhukPyovvA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\darkz\\Documents\\Q2\\Vanguardia\\Examen2\\hotel.rates.api-master\\Hotel.Rates.Service\\Hotel.Rates.Infrastructure.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\darkz\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\darkz\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

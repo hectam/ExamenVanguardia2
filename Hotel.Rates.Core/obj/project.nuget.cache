@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "uLxELlKvuj78yeBODjbTNwQwx02/GM3IqbEsCQfnJWh68nPSz+yEwUzuWwRZ6JVlyPlsVpAqR0o3T5at/xRWnQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\darkz\\Documents\\Q2\\Vanguardia\\Examen2\\hotel.rates.api-master\\Hotel.Rates.Core\\Hotel.Rates.Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\darkz\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512"
+  ],
+  "logs": []
+}
